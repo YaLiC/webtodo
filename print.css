@@ -1,0 +1,39 @@
+/*      File: print.css
+**      Author: Балдуев Илья, email:ilya@balduev.tk.
+**      License: http://creativecommons.org/licenses/by-nc-sa/3.0/
+*/
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=latin,cyrillic);
+
+section {display:block;}
+html {padding:20px;background-color:#fff;}
+body {
+	width:100%;
+	color:#000;
+	font-size:14pt;
+	text-align:left;
+	font-family:"Ubuntu", "trebuchet MS", sans-serif;
+}
+header {display:none;}
+footer {display:none;}
+
+#overlay {display:none;}
+#wait {display:none;}
+#user {display:none;}
+#menu {display:none;}
+#main {min-height:50px;}
+#main ul.todo {padding-left:0px; list-style:none;}
+#main li.todo {
+	min-width:400px;
+	margin:20px 5px; padding:0px;
+	border-top:1px dotted #bbb;
+	border-left:4px solid #bbb;
+}
+#main .txtinmain {padding:20px;}
+#newtodo {display:none;}
+#today {display:none !important;;}
+#headlinks {display:none;}
+
+.todohead {display:none;}
+.todocontent {margin:0; padding:5px 10px 5px 30px;	font-weight:normal;	text-align:justify;}
+
+

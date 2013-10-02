@@ -1,0 +1,262 @@
+/* CORE STYLES
+   ================================================== */
+/* noty bar  */
+.noty_bar {
+    display: none; position: fixed;
+    z-index: 9999999
+}
+.noty_bar .noty_message { text-align: center }
+.noty_bar .noty_close { cursor: pointer }
+/* noty_message  */
+/* noty close button  */
+/* noty modal  */
+.noty_modal {
+    display: none; position: fixed;
+    left: 0; top: 0;
+    height: 100%; width: 100%;
+    background-color: #000;
+    opacity: 0.6;
+    z-index: 10000;
+}
+/* noty container for noty_layout_topLeft & noty_layout_topRight  */
+ul.noty_cont {
+    position: fixed;
+    width: 300px;
+    margin: 0px; padding: 0px;
+    list-style: none;
+    z-index: 10000000;
+}
+ul.noty_cont li {
+    float: left; position: relative;
+    width: 300px;
+    margin: 10px 0 0 0; padding: 0px;
+    /* Fix for: http://bugs.jquery.com/ticket/2278 */;
+    clear: both;
+    list-style: none;
+    nowhitespace: afterproperty;
+}
+ul.noty_cont.noty_layout_topLeft {
+    left: 20px; top: 20px
+}
+ul.noty_cont.noty_layout_topRight {
+    right: 40px; top: 20px
+}
+ul.noty_cont.noty_layout_topRight li { float: right }
+ul.noty_cont.noty_layout_bottomLeft {
+    bottom: 20px; left: 20px
+}
+ul.noty_cont.noty_layout_bottomRight {
+    bottom: 20px; right: 40px
+}
+/* LAYOUTS
+   ================================================== */
+/* noty_layout_top  */
+.noty_bar.noty_layout_top {
+    left: 0; top: 0;
+    width: 100%;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+/* noty_layout_bottom  */
+.noty_bar.noty_layout_bottom {
+    bottom: 0; left: 0;
+    width: 100%;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+/* noty_layout_center  */
+.noty_bar.noty_layout_center { top: 40% }
+/* noty_layout_topLeft & noty_layout_topRight  */
+.noty_bar.noty_layout_topLeft, .noty_bar.noty_layout_topRight, .noty_bar.noty_layout_bottomLeft, .noty_bar.noty_layout_bottomRight {
+    position: relative;
+    width: 100%;
+    clear: both
+}
+.noty_bar.noty_layout_topLeft .noty_message, .noty_bar.noty_layout_topRight .noty_message, .noty_bar.noty_layout_bottomLeft .noty_message, .noty_bar.noty_layout_bottomRight .noty_message { text-align: left }
+/* noty_layout_topCenter  */
+.noty_bar.noty_layout_topCenter { top: 20px }
+/* CORE STYLES
+   ================================================== */
+/* noty bar  */
+.noty_bar.noty_theme_default { background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAoCAYAAAAPOoFWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAPZJREFUeNq81tsOgjAMANB2ov7/7ypaN7IlIwi9rGuT8QSc9EIDAsAznxvY4pXPKr05RUE5MEVB+TyWfCEl9LZApYopCmo9C4FKSMtYoI8Bwv79aQJU4l6hXXCZrQbokJEksxHo9KMOgc6w1atHXM8K9DVC7FQnJ0i8iK3QooGgbnyKgMDygBWyYFZoqx4qS27KqLZJjA1D0jK6QJcYEQEiWv9PGkTsbqxQ8oT+ZtZB6AkdsJnQDnMoHXHLGKOgDYuCWmYhEERCI5gaamW0bnHdA3k2ltlIN+2qKRyCND0bhqSYCyTB3CAOc4WusBEIpkeBuPgJMAAX8Hs1NfqHRgAAAABJRU5ErkJggg==') repeat-x scroll left top #fff }
+.noty_bar.noty_theme_default .noty_message {
+    width: auto;
+    padding: 8px 14px;
+    font-size: 16px; font-weight: bold
+}
+.noty_bar.noty_theme_default .noty_message .noty_buttons {
+    float: right;
+    margin-left: 4px; margin-top: -4px;
+    font-size: 13px
+}
+.noty_bar.noty_theme_default .noty_message .noty_buttons button { margin-left: 5px }
+.noty_bar.noty_theme_default .noty_close {
+    position: absolute;
+    right: 10px; top: 10px;
+    height: 20px; width: 20px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAORJREFUeNq0lU0OgjAQhRm5gUl3rLyBB3BDQjwI4TDcgmu4NqwNJGxdueqWA4zzCJoxtvxoeckLzbz2C5ShEDNHDiXis/gkPooPY/0uvomv4ov48bUSQGUSF+Ka51WPc0kzNGwvLnm9ynHtB5B+hGkoaWDB/6t4AZOFe7ZkTxMAc1dqreU0TbnrunetbVvOsmzIPMoBrFwJYGgCY8wAgjFGDZlHFYCNK9EAXPUYmUcNgL0v1dAFMKjfRSsVx/H0hC0eOfhLmWwbfTcYozbXNsEbO/int8nhEPz4CnbAUuhfwFOAAQAA48KKOuexjwAAAABJRU5ErkJggg==')
+}
+/* if you use noty with customContainer you can access noty with this way 
+	*	 .noty_custom_container noty will add automaticly this class to your customContainer
+	*	 .noty_theme_default 		your theme
+	*	 .noty_layout_inline		your layout 
+	 */
+/* custom container  */
+.noty_custom_container.noty_theme_default.noty_layout_inline { position: relative }
+.noty_custom_container.noty_theme_default.noty_layout_inline .noty_cont.noty_layout_inline { position: static }
+.noty_custom_container.noty_theme_default.noty_layout_inline .noty_bar {
+    position: static;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.noty_custom_container.noty_theme_default.noty_layout_inline .noty_bar .noty_message {
+    padding: 4px;
+    font-size: 13px
+}
+.noty_custom_container.noty_theme_default.noty_layout_inline .noty_bar .noty_message .noty_buttons { margin-top: -1px }
+/* custom growl container  */
+/* custom noty bar  */
+/* noty_message  */
+.noty_bar.noty_theme_default.noty_closable .noty_message { padding: 8px 34px 8px 14px }
+/* noty_buttons  */
+/* noty_button  */
+/* noty close button  */
+/* noty modal  */
+.noty_modal.noty_theme_default { opacity: 0.7 }
+/* LAYOUTS
+   ================================================== */
+/* noty_layout_top  */
+.noty_bar.noty_theme_default.noty_layout_top { border-bottom: 3px solid #eee }
+/* noty_layout_bottom  */
+.noty_bar.noty_theme_default.noty_layout_bottom { border-top: 3px solid #eee }
+/* noty_layout_topLeft & noty_layout_topRight  */
+.noty_bar.noty_theme_default.noty_layout_center, .noty_bar.noty_theme_default.noty_layout_topLeft, .noty_bar.noty_theme_default.noty_layout_topRight, .noty_bar.noty_theme_default.noty_layout_bottomLeft, .noty_bar.noty_theme_default.noty_layout_bottomRight {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.noty_bar.noty_theme_default.noty_layout_center .noty_message, .noty_bar.noty_theme_default.noty_layout_topLeft .noty_message, .noty_bar.noty_theme_default.noty_layout_topRight .noty_message, .noty_bar.noty_theme_default.noty_layout_bottomLeft .noty_message, .noty_bar.noty_theme_default.noty_layout_bottomRight .noty_message {
+    font-size: 13px; font-weight: normal
+}
+.noty_bar.noty_theme_default.noty_layout_topLeft .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_layout_topRight .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_layout_bottomLeft .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_layout_bottomRight .noty_message .noty_buttons {
+    float: none;
+    margin-left: 0; margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+    text-align: right
+}
+.noty_bar.noty_theme_default.noty_layout_center .noty_close { top: 8px }
+.noty_bar.noty_theme_default.noty_layout_center .noty_message .noty_buttons { margin-top: -2px }
+/* noty_layout_topCenter  */
+.noty_bar.noty_theme_default.noty_layout_topCenter {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.noty_bar.noty_theme_default.noty_layout_topCenter .noty_message {
+    font-size: 13px; font-weight: normal
+}
+.noty_bar.noty_theme_default.noty_layout_topCenter .noty_message .noty_buttons {
+    margin-left: 15px; margin-top: 0px
+}
+.noty_bar.noty_theme_default.noty_layout_topCenter .noty_close {
+    top: 50%;
+    margin-top: -10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+.noty_bar.noty_theme_default.noty_layout_topCenter.noty_success { border: 1px solid #50C24E }
+/* NOTIFICATION TYPES
+   ================================================== */
+/* noty_notification  */
+.noty_bar.noty_theme_default.noty_notification {
+    background-color: #fff; color: #555;
+    border-color: #ccc
+}
+.noty_bar.noty_theme_default.noty_notification.noty_layout_topLeft .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_notification.noty_layout_topRight .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_notification.noty_layout_bottomLeft .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_notification.noty_layout_bottomRight .noty_message .noty_buttons { border-color: #ccc }
+/* noty_warning  */
+.noty_bar.noty_theme_default.noty_warning {
+    background-color: #FFEAA8; color: #826200;
+    border-color: #FFC237
+}
+.noty_bar.noty_theme_default.noty_warning.noty_layout_topLeft .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_warning.noty_layout_topRight .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_warning.noty_layout_bottomLeft .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_warning.noty_layout_bottomRight .noty_message .noty_buttons { border-color: #FFC237 }
+/* noty_alert  */
+.noty_bar.noty_theme_default.noty_alert {
+    background-color: #fff;
+    border-color: #ccc
+}
+.noty_bar.noty_theme_default.noty_alert.noty_layout_topLeft .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_alert.noty_layout_topRight .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_alert.noty_layout_bottomLeft .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_alert.noty_layout_bottomRight .noty_message .noty_buttons { border-color: #ccc }
+/* noty_error  */
+.noty_bar.noty_theme_default.noty_error {
+    background-color: red; color: #fff;
+    border-color: darkred
+}
+.noty_bar.noty_theme_default.noty_error .noty_message { font-weight: bold }
+.noty_bar.noty_theme_default.noty_error.noty_layout_topLeft .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_error.noty_layout_topRight .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_error.noty_layout_bottomLeft .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_error.noty_layout_bottomRight .noty_message .noty_buttons { border-color: darkred }
+/* noty_success  */
+.noty_bar.noty_theme_default.noty_success {
+    background-color: lightgreen; color: darkgreen;
+    border-color: #50C24E
+}
+.noty_bar.noty_theme_default.noty_success.noty_layout_topLeft .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_success.noty_layout_topRight .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_success.noty_layout_bottomLeft .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_success.noty_layout_bottomRight .noty_message .noty_buttons { border-color: #50C24E }
+/* noty_information  */
+.noty_bar.noty_theme_default.noty_information {
+    background-color: #57B7E2; color: #fff;
+    border-color: #0B90C4
+}
+.noty_bar.noty_theme_default.noty_information.noty_layout_topLeft .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_information.noty_layout_topRight .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_information.noty_layout_bottomLeft .noty_message .noty_buttons, .noty_bar.noty_theme_default.noty_information.noty_layout_bottomRight .noty_message .noty_buttons { border-color: #0B90C4 }
+
+/*	BUTTONs
+	======	*/
+button {
+ display: inline-block; margin: 5px; padding: 5px 8px 4px 8px; color: #333; text-decoration: none; -moz-border-radius: 2px; -moz-transition: border-color .20s; -o-transition: border-color .20s; -webkit-border-radius: 2px; -webkit-transition: border-color .20s; background: #F3F3F3; border: solid 1px #D9D9D9; border-radius: 4px; cursor: pointer; font: bold 11px; text-shadow: 0 0 5px #fff; transition: border-color .20s;
+}
+button:active {
+ color: #4D90FE; -moz-box-shadow: inset 0 0 10px #D4D4D4; -webkit-box-shadow: inset 0 0 10px #D4D4D4; border-color: #4D90FE; box-shadow: inset 0 0 10px #D4D4D4;
+}
+button:hover {
+ color: #111; background: #F4F4F4; border-color: #C0C0C0;
+}
+button.blue {
+ -moz-transition: border .20s; -o-transition: border .20s; -webkit-transition: border .20s; background: #4B8DF8; background: -webkit-linear-gradient(top, #4C8FFD, #4787ED); background: -moz-linear-gradient(top, #4C8FFD, #4787ED); background: -o-linear-gradient(top, #4C8FFD, #4787ED); border: 1px solid #3079ED !important; transition: border .20s;
+}
+button.blue:active {
+ border-color: #2F5BB7 !important
+}
+button.blue:hover {
+ background: #3F83F1; background: -webkit-linear-gradient(top, #4D90FE, #357AE8); background: -moz-linear-gradient(top, #4D90FE, #357AE8); background: -o-linear-gradient(top, #4D90FE, #357AE8); border: 1px solid #2F5BB7 !important;
+}
+button.green {
+ -moz-transition: border .20s; -o-transition: border .20s; -webkit-transition: border .20s; background: #3A8E00; background: -webkit-linear-gradient(top, #3C9300, #398A00); background: -moz-linear-gradient(top, #3C9300, #398A00); background: -o-linear-gradient(top, #3C9300, #398A00); border: 1px solid #29691D !important; transition: border .20s;
+}
+button.green:active {
+ border-color: #2D6200 !important
+}
+button.green:hover {
+ background: #3F83F1; background: -webkit-linear-gradient(top, #3C9300, #368200); background: -moz-linear-gradient(top, #3C9300, #368200); background: -o-linear-gradient(top, #3C9300, #368200); border: 1px solid #2D6200 !important;
+}
+button.red {
+ -moz-transition: border .20s; -o-transition: border .20s; -webkit-transition: border .20s; background: #D64937; background: -webkit-linear-gradient(top, #DC4A38, #D14836); background: -moz-linear-gradient(top, #DC4A38, #D14836); background: -o-linear-gradient(top, #DC4A38, #D14836); border: 1px solid #D14836 !important; transition: border .20s;
+}
+button.red:active {
+ border-color: #B0281A !important
+}
+button.red:hover {
+ background: #D14130; background: -webkit-linear-gradient(top, #DC4A38, #C53727); background: -moz-linear-gradient(top, #DC4A38, #C53727); background: -o-linear-gradient(top, #DC4A38, #C53727); border: 1px solid #B0281A !important;
+}
+button.action:hover {
+ -moz-box-shadow: 0 1px 0px #DDD; -webkit-box-shadow: 0 1px 0px #DDD; box-shadow: iset 0 1px 0px #DDD;
+}
+button.action:active {
+ -moz-box-shadow: none !important; -webkit-box-shadow: none !important; border-color: #C6C6C6 !important; box-shadow: none !important;
+}
